@@ -7,6 +7,7 @@ package com.gameproject.rock;
 
 import com.gameproject.game.Paper;
 import com.gameproject.game.Rock;
+import com.gameproject.game.Scissor;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -63,6 +64,19 @@ public class RunRockTest {
         
         System.out.println("Rock beats Scissor");
         Assert.assertTrue("Rock beats Scissor", rock.against(scissor) > 0);
+    }
+    
+     /**
+     * validates Rock against the Rock
+     * @Rule Rock ties Rock
+     */
+    @Test
+    public void testRockAgainstRock() {
+        Rock rock = new Rock();
+        Rock rock2 = new Rock();
+        
+        System.out.println("Rock ties Rock");
+        Assert.assertTrue("Rock ties Rock", rock.against(rock2) == 0);
     }
     
    
