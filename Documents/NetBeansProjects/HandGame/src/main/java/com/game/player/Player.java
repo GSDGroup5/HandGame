@@ -17,4 +17,8 @@ public class Player {
     public HandGame createRock() {
         return new Rock();
     }
+
+    public HandGame createPaper() {
+        return new Paper();
+    }
 }
