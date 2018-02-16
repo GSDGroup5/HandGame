@@ -20,4 +20,13 @@ public class Rock {
     public int against(Paper paper) {
         return -1;
     }
+
+    /**
+     * Rock against the Scissor
+     * @param scissor Scissor
+     * @return 1 because Rock beats Scissor
+     */
+    public int against(Scissor scissor) {
+        return 1;
+    }
 }
