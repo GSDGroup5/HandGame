@@ -9,6 +9,8 @@ import com.gameproject.handgame.HandGame;
 import com.gameproject.handgame.Paper;
 import com.gameproject.handgame.Rock;
 import com.gameproject.handgame.Scissor;
+import java.util.Arrays;
+import java.util.List;
 import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -16,11 +18,14 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 
 /**
  *
  * @author pc
  */
+@RunWith(Parameterized.class)
 public class TestPlayer {
 
     private static final Logger LOG = Logger.getLogger(TestPlayer.class.getName());
@@ -29,6 +34,11 @@ public class TestPlayer {
     private final static String SCISSOR = "com.gameproject.game.Scissor";
 
     public TestPlayer() {
+    }
+
+    @Parameterized.Parameters
+    public static List<Object[]> data() {
+        return Arrays.asList(new Object[100][0]);
     }
 
     @BeforeClass
@@ -45,6 +55,19 @@ public class TestPlayer {
 
     @After
     public void tearDown() {
+    }
+
+    /**
+     * This Method runs the test for: 1- Rock Vs Rock 2- Rock Vs Scissor 3- Rock
+     * Vs Paper 100 times
+     *
+     * @throws Exception
+     */
+    @Test
+    public void runHandGameMultipleTimes() throws Exception {
+        testRockAgainstRock();
+        testRockAgainstPaper();
+        testRockAgainstScissor();
     }
 
     @Test
