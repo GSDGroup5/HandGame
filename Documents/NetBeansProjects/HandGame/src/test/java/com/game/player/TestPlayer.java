@@ -5,6 +5,8 @@
  */
 package com.game.player;
 
+import com.gameproject.handgame.HandGame;
+import com.gameproject.handgame.Rock;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -43,4 +45,12 @@ public class TestPlayer {
         HandGame rock = player.createRock();
         assertTrue(rock instanceof Rock);
     }
+    
+    @Test
+    public void testGeneratePaper() {
+        Player player = new Player();
+        HandGame paper = player.createPaper();
+        assertTrue(paper instanceof Paper);
+    }
+
 }
