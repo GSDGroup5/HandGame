@@ -48,6 +48,6 @@ public class RunRockTest {
         Rock rock = new Rock();
         Paper paper = new Paper();
 
-        Assert.assertTrue("Rock is defeated by Paper", rock.against(paper) < -1);
+        Assert.assertFalse("Rock is defeated by Paper", rock.against(paper) < -1);
     }
 }
