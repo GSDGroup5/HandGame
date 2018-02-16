@@ -6,6 +6,7 @@
 package com.game.player;
 
 import com.gameproject.handgame.HandGame;
+import com.gameproject.handgame.Paper;
 import com.gameproject.handgame.Rock;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -53,4 +54,10 @@ public class TestPlayer {
         assertTrue(paper instanceof Paper);
     }
 
+    @Test
+    public void testGenerateScissor() {
+        Player player = new Player();
+        HandGame scissor = player.createScissor();
+        assertTrue(scissor instanceof Scissor);
+    }
 }
