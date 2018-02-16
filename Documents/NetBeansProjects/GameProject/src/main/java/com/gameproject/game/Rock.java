@@ -17,7 +17,7 @@ public class Rock {
      * @param paper Paper
      * @return -1 because Rock Loses to Paper
      */
-    public int againts(Paper paper) {
+    public int against(Paper paper) {
         return -1;
     }
 }

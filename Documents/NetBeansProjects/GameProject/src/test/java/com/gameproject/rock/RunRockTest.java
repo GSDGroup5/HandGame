@@ -5,6 +5,8 @@
  */
 package com.gameproject.rock;
 
+import com.gameproject.game.Paper;
+import com.gameproject.game.Rock;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -46,6 +48,6 @@ public class RunRockTest {
         Rock rock = new Rock();
         Paper paper = new Paper();
 
-        Assert.assertTrue("Rock is defeated by Paper", rock.beats(paper) < -1);
+        Assert.assertTrue("Rock is defeated by Paper", rock.against(paper) < -1);
     }
 }
