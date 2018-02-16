@@ -6,7 +6,9 @@
 package com.game.player;
 
 import com.gameproject.handgame.HandGame;
+import com.gameproject.handgame.Paper;
 import com.gameproject.handgame.Rock;
+import com.gameproject.handgame.Scissor;
 
 /**
  *
@@ -20,5 +22,9 @@ public class Player {
 
     public HandGame createPaper() {
         return new Paper();
+    }
+    
+    public HandGame createScissor() {
+        return new Scissor();
     }
 }
