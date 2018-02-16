@@ -5,6 +5,8 @@
  */
 package com.game;
 
+import com.gameproject.handgame.Paper;
+import com.gameproject.handgame.Rock;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -49,5 +51,18 @@ public class TestRock {
         
         System.out.println("Rock is defeated by Paper");
         Assert.assertTrue("Rock is defeated by Paper", rock.against(paper) < 0);
+    }
+    
+     /**
+     * validates Rock against the Scissor
+     * @Rule Rock  beats Scissor
+     */
+    @Test
+    public void testRockAgainstScissor() {
+        Rock rock = new Rock();
+        Scissor scissor = new Scissor();
+        
+        System.out.println("Rock beats Scissor");
+        Assert.assertTrue("Rock beats Scissor", rock.against(scissor) > 0);
     }
 }
