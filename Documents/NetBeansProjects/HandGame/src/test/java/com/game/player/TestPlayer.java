@@ -70,34 +70,12 @@ public class TestPlayer {
         testRockAgainstScissor();
     }
 
-    @Test
-    public void testGenerateRock() {
-        Player player = new Player();
-        HandGame rock = player.createRock();
-        assertTrue(rock instanceof Rock);
-    }
-
-    @Test
-    public void testGeneratePaper() {
-        Player player = new Player();
-        HandGame paper = player.createPaper();
-        assertTrue(paper instanceof Paper);
-    }
-
-    @Test
-    public void testGenerateScissor() {
-        Player player = new Player();
-        HandGame scissor = player.createScissor();
-        assertTrue(scissor instanceof Scissor);
-    }
-
     /**
      * Player1 plays against Player2 using Rock and Paper option
      *
      * @throws Exception create class other then Rock , Scissor ,Paper then
      * exception is thrown
      */
-    @Test
     public void testRockAgainstPaper() throws Exception {
         Player player1 = new Player();
         Player player2 = new Player();
@@ -114,7 +92,6 @@ public class TestPlayer {
      * @throws Exception create class other then Rock , Scissor ,Paper then
      * exception is thrown
      */
-    @Test
     public void testRockAgainstScissor() throws Exception {
         Player player1 = new Player();
         Player player2 = new Player();
@@ -131,7 +108,6 @@ public class TestPlayer {
      * @throws Exception create class other then Rock , Scissor ,Paper then
      * exception is thrown
      */
-    @Test
     public void testRockAgainstRock() throws Exception {
         Player player1 = new Player();
         Player player2 = new Player();
