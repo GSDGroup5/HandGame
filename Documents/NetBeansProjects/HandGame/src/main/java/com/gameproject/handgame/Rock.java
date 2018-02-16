@@ -28,5 +28,14 @@ public class Rock {
     public int against(Scissor scissor) {
         return 1;
     }
+    
+     /**
+     * Rock ties Rock
+     * @param rock Rock
+     * @return 0 because Rock ties Rock
+     */
+    public int against(Rock rock) {
+        return 0;
+    }
 
 }
