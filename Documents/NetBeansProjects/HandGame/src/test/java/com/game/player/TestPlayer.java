@@ -31,7 +31,7 @@ public class TestPlayer {
     private static final Logger LOG = Logger.getLogger(TestPlayer.class.getName());
     private final static String ROCK = "com.gameproject.handgame.Rock";
     private final static String PAPER = "com.gameproject.handgame.Paper";
-    private final static String SCISSOR = "com.gameproject.game.Scissor";
+    private final static String SCISSOR = "com.gameproject.handgame.Scissor";
 
     public TestPlayer() {
     }
@@ -58,8 +58,11 @@ public class TestPlayer {
     }
 
     /**
-     * This Method runs the test for: 1- Rock Vs Rock 2- Rock Vs Scissor 3- Rock
-     * Vs Paper 100 times
+     * This Method runs the test for: 
+     * 1- Rock Vs Rock 
+     * 2- Rock Vs Scissor 
+     * 3- Rock Vs Paper 
+     * 100 times
      *
      * @throws Exception
      */
