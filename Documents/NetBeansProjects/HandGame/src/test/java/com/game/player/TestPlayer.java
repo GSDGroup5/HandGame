@@ -8,6 +8,8 @@ package com.game.player;
 import com.gameproject.handgame.HandGame;
 import com.gameproject.handgame.Paper;
 import com.gameproject.handgame.Rock;
+import com.gameproject.handgame.Scissor;
+import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -21,21 +23,26 @@ import static org.junit.Assert.*;
  */
 public class TestPlayer {
     
+    private static final Logger LOG = Logger.getLogger(TestPlayer.class.getName());
+    private final static String ROCK = "com.gameproject.handgame.Rock";
+    private final static String PAPER = "com.gameproject.handgame.Paper";
+
+    
     public TestPlayer() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -46,7 +53,7 @@ public class TestPlayer {
         HandGame rock = player.createRock();
         assertTrue(rock instanceof Rock);
     }
-    
+
     @Test
     public void testGeneratePaper() {
         Player player = new Player();
@@ -60,4 +67,22 @@ public class TestPlayer {
         HandGame scissor = player.createScissor();
         assertTrue(scissor instanceof Scissor);
     }
+
+    /**
+     * Player1 plays against Player2 using Rock and Paper option
+     *
+     * @throws Exception create class other then Rock , Scissor ,Paper then
+     * exception is thrown
+     */
+    @Test
+    public void testRockAgainstPaper() throws Exception {
+        Player player1 = new Player();
+        Player player2 = new Player();
+        HandGame rock = player1.invokeHandGame(ROCK);
+        HandGame paper = player2.invokeHandGame(PAPER);
+
+        LOG.info("Rock is defeated by Paper");
+        assertTrue(((Rock) rock).against((Paper) paper) < 0);
+    }
+
 }
