@@ -101,4 +101,21 @@ public class TestPlayer {
         LOG.info("Rock beats Scissor");
         assertTrue(((Rock) rock).against((Scissor) scissor) > 0);
     }
+
+    /**
+     * Player1 plays against Player2 using Rock and Rock option
+     *
+     * @throws Exception create class other then Rock , Scissor ,Paper then
+     * exception is thrown
+     */
+    @Test
+    public void testRockAgainstRock() throws Exception {
+        Player player1 = new Player();
+        Player player2 = new Player();
+        HandGame rock = player1.invokeHandGame(ROCK);
+        HandGame rock2 = player2.invokeHandGame(ROCK);
+
+        LOG.info("Rock ties Rock");
+        assertTrue(((Rock) rock).against((Rock) rock2) == 0);
+    }
 }
