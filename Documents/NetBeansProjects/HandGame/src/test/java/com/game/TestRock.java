@@ -7,6 +7,7 @@ package com.game;
 
 import com.gameproject.handgame.Paper;
 import com.gameproject.handgame.Rock;
+import com.gameproject.handgame.Scissor;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -20,49 +21,65 @@ import static org.junit.Assert.*;
  * @author pc
  */
 public class TestRock {
-    
+
     public TestRock() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
 
     /**
      * method validates Rock against the Paper
+     *
      * @Rule Rock is defeated by Paper
      */
     @Test
     public void testRockAgainstPaper() {
         Rock rock = new Rock();
         Paper paper = new Paper();
-        
+
         System.out.println("Rock is defeated by Paper");
         Assert.assertTrue("Rock is defeated by Paper", rock.against(paper) < 0);
     }
-    
-     /**
+
+    /**
      * validates Rock against the Scissor
-     * @Rule Rock  beats Scissor
+     *
+     * @Rule Rock beats Scissor
      */
     @Test
     public void testRockAgainstScissor() {
         Rock rock = new Rock();
         Scissor scissor = new Scissor();
-        
+
         System.out.println("Rock beats Scissor");
         Assert.assertTrue("Rock beats Scissor", rock.against(scissor) > 0);
+    }
+
+    /**
+     * validates Rock against the Rock
+     *
+     * @Rule Rock ties Rock
+     */
+    @Test
+    public void testRockAgainstRock() {
+        Rock rock = new Rock();
+        Rock rock2 = new Rock();
+
+        System.out.println("Rock ties Rock");
+        Assert.assertTrue("Rock ties Rock", rock.against(rock2) == 0);
     }
 }
