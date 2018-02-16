@@ -22,12 +22,12 @@ import static org.junit.Assert.*;
  * @author pc
  */
 public class TestPlayer {
-    
+
     private static final Logger LOG = Logger.getLogger(TestPlayer.class.getName());
     private final static String ROCK = "com.gameproject.handgame.Rock";
     private final static String PAPER = "com.gameproject.handgame.Paper";
+    private final static String SCISSOR = "com.gameproject.game.Scissor";
 
-    
     public TestPlayer() {
     }
 
@@ -85,4 +85,20 @@ public class TestPlayer {
         assertTrue(((Rock) rock).against((Paper) paper) < 0);
     }
 
+    /**
+     * Player1 plays against Player2 using Rock and Scissor option
+     *
+     * @throws Exception create class other then Rock , Scissor ,Paper then
+     * exception is thrown
+     */
+    @Test
+    public void testRockAgainstScissor() throws Exception {
+        Player player1 = new Player();
+        Player player2 = new Player();
+        HandGame rock = player1.invokeHandGame(ROCK);
+        HandGame scissor = player2.invokeHandGame(SCISSOR);
+
+        LOG.info("Rock beats Scissor");
+        assertTrue(((Rock) rock).against((Scissor) scissor) > 0);
+    }
 }
