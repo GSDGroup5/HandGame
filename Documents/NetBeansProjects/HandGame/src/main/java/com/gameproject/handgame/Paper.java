@@ -9,6 +9,6 @@ package com.gameproject.handgame;
  *
  * @author pc
  */
-public class Paper {
+public class Paper implements HandGame {
     
 }

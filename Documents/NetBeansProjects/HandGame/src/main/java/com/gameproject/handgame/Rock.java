@@ -9,7 +9,7 @@ package com.gameproject.handgame;
  *
  * @author pc
  */
-public class Rock {
+public class Rock implements HandGame{
 
     /**
      * Rock against the paper
