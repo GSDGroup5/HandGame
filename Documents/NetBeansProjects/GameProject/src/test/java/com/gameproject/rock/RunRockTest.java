@@ -44,10 +44,13 @@ public class RunRockTest {
      * @Rule Rock is defeated by Paper
      */
     @Test
-    public void testRockBeatsPaper() {
+    public void testRockAgainstPaper() {
         Rock rock = new Rock();
         Paper paper = new Paper();
-
-        Assert.assertFalse("Rock is defeated by Paper", rock.against(paper) < -1);
+        
+        System.out.println("Rock is defeated by Paper");
+        Assert.assertTrue("Rock is defeated by Paper", rock.against(paper) < 0);
     }
+    
+   
 }
