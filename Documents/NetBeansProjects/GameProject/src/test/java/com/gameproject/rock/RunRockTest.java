@@ -52,5 +52,18 @@ public class RunRockTest {
         Assert.assertTrue("Rock is defeated by Paper", rock.against(paper) < 0);
     }
     
+    /**
+     * validates Rock against the Scissor
+     * @Rule Rock  beats Scissor
+     */
+    @Test
+    public void testRockAgainstScissor() {
+        Rock rock = new Rock();
+        Scissor scissor = new Scissor();
+        
+        System.out.println("Rock beats Scissor");
+        Assert.assertTrue("Rock beats Scissor", rock.against(scissor) > 0);
+    }
+    
    
 }
